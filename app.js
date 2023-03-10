@@ -12,7 +12,7 @@ const multer=require("multer")
 const errorController = require('./controllers/error');
 const User = require('./models/user');
 
-const MONGODB_URI='mongodb+srv://hiteshmodi0624:Faaccbuk12@cluster0.xoqc73t.mongodb.net/shop';
+const MONGODB_URI = `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@cluster0.xoqc73t.mongodb.net/${process.env.MONOGO_DEFAULT_DATABASE}`;
 
 
 const app = express();
@@ -99,7 +99,7 @@ app.use((error,req,res,next)=>{
 mongoose
   .connect(MONGODB_URI)
   .then(result => {
-    app.listen(3000);
+    app.listen(process.env.PORT||3000);
   })
   .catch(err => {
     console.log(err);

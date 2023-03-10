@@ -1,0 +1,9 @@
+{
+    "env":{
+        "MONGO_USER":"hiteshmodi0624",
+        "MONGO_PASSWORD":"Faaccbuk12",
+        "MONOGO_DEFAULT_DATABASE":"shop",
+        "NODEMAILER":"md-L5gkJWLoRHBLE5_8RPvn2Q",
+        "STRIPE_KEY":"sk_test_51Mie0ZSBquX0ZYcyO6kiH81W1ztMPsbyP5z6K83QjsEgp3EfXrSfDgn1qBEH5RydaPFy7rkRTYsF13dbkILOPIyh005WE3aXRH"
+    }
+}
