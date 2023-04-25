@@ -53,6 +53,16 @@ const accessLogStream = fs.createWriteStream(
     { flags: "a" }
 );
 
+app.use((req, res, next) => {
+  res.setHeader(
+    "Content-Security-Policy",
+    "script-src 'self' 'unsafe-inline' https://js.stripe.com"
+  );
+  next();
+});
+
+
+
 app.use(helmet())
 app.use(compression())
 app.use(morgan('combined',{stream:accessLogStream}))
