@@ -24,7 +24,7 @@ router.post('/login',
         "password",
         "Please enter a password with only numbers and aplhabets and atleast 5 and max 6 characters."
     )
-        .isLength({ min: 5, max: 6 })
+        .isLength({ min: 5 })
         .isAlphanumeric().trim(),
 ],authController.postLogin);
 
