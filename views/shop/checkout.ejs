@@ -1,9 +1,9 @@
 <%- include('../includes/head.ejs') %>
     <link rel="stylesheet" href="/css/cart.css">
     <meta http-equiv="Content-Security-Policy" 
-          content="default-src 'self'; script-src 'self' stripe.com; 
-                   style-src 'self' stripe.com; img-src 'self' stripe.com; 
-                   connect-src 'self' stripe.com; font-src 'self' stripe.com; 
+          content="default-src 'self'; script-src 'self' 'unsafe-inline' stripe.com; 
+                   style-src 'self' stripe.com 'unsafe-inline'; img-src 'self' stripe.com; 
+                   connect-src 'self' stripe.com; font-src 'self' stripe.com data:;
                    base-uri 'self'; form-action 'self'; 
                    script-src-elem 'nonce-abc123'">
     </head>
@@ -26,7 +26,8 @@
                 <button id="order-btn" class="btn">ORDER</button>
                 <script src="https://js.stripe.com/v3/"></script>
                 <script nonce="abc123">
-                <script>
+                <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+                <script nonce="abc123">
                     var stripe = Stripe('pk_test_51Mie0ZSBquX0ZYcyHezky6qOp2irSg9xZs3KjYp9an6u3gEy1wqtf9l6JMzy95PQgF1GIfDy6WEuuJGH9DHvzOSD00qPojjFYE');
                     var orderBtn=document.getElementById("order-btn")
                     orderBtn.addEventListener('click',function(){
